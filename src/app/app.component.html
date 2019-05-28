@@ -1,0 +1,31 @@
+<div class="home">
+
+  <div class="row">
+    <input type="text"
+      class="form-field"
+      [value]="newTask.name"
+      (input)="onFormChange($event)"
+      placeholder="Enter a new task">
+    <button class="create"
+      [disabled]="!newTask.name"
+      (click)="createTask()">ADD TASK</button>
+  </div>
+
+  <div class="header">My Todo List</div>
+
+  <div class="row"
+    *ngFor="let task of allTasks$ | async">
+    <div class="form-field">
+      <input type="checkbox"
+        [id]="task.id"
+        [checked]="task.complete"
+        (change)="toggleTask(task)">
+      <label [attr.for]="task.id">{{task.name}}</label>
+    </div>
+    <button class="delete"
+      (click)="deleteTask(task.id)">DELETE</button>
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>

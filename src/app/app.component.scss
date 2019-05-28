@@ -1,0 +1,50 @@
+button {
+  height: 30px;
+  width: 100px;
+  margin: 2px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: .8em;
+  &.delete {
+    color: red;
+  }
+  &.create {
+    color: black;
+    &:disabled {
+      color: lightgrey;
+    }
+  }
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+input {
+  border: 1px lightgrey solid;
+  font-size: 1.1em;
+  &[type=checkbox] {
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > .header {
+    font-weight: 600;
+    width: 650px;
+    margin-top: 30px;
+    border-bottom: solid 1px black;
+  }
+  > .row {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    > .form-field {
+      display: flex;
+      align-items: left;
+      width: 500px;
+    }
+  }
+}
