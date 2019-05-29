@@ -16,13 +16,14 @@
   <div class="row"
     *ngFor="let task of allTasks$ | async">
     <div class="form-field">
-      <input type="checkbox"
+      <mat-checkbox
         [id]="task.id"
         [checked]="task.complete"
         (change)="toggleTask(task)">
+      </mat-checkbox>
       <label [attr.for]="task.id">{{task.name}}</label>
     </div>
-    <button class="delete"
+    <button mat-raised-button class="delete"
       (click)="deleteTask(task.id)">DELETE</button>
   </div>
 
